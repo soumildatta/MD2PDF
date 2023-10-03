@@ -10,8 +10,19 @@ def list_files(folder_path):
 def convert(input_file, output_file):
     with open(input_file, 'r', encoding='utf-8') as f:
         markdown_content = f.read()
+        
+    pdfkit.from_string(markdown.markdown(markdown_content), output_file)
 
-    html_content = markdown.markdown(markdown_content)
+def convert_combined(input_folder, output_file):
+    file_list = list_files(input_folder)
+
+    html_content = ""
+    for file in file_list:
+        file = f'{input_folder}/{file}'
+        with open(file, 'r', encoding='utf-8') as f:
+            markdown_content = f.read()
+
+        html_content += markdown.markdown(markdown_content)
 
     pdfkit.from_string(html_content, output_file)
 
@@ -24,6 +35,8 @@ def process_folder_into_folder(input_folder, output_folder):
         output_file = file.split('.')[0]
         convert(f'{input_folder}/{file}', f'{output_folder}/{output_file}.pdf')
 
+def process_folder_into_file(input_folder, output_file):
+    convert_combined(input_folder, output_file)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Convert Markdown to PDF.')
@@ -45,6 +58,8 @@ if __name__ == "__main__":
     # Perform conversion
     if type == 1:
         convert(input_file, output_file)
+    elif type == 2:
+        process_folder_into_file(input_file, output_file)
     else:
         process_folder_into_folder(input_file, output_file)
     print(f"Successfully converted '{input_file}' to '{output_file}'.")
