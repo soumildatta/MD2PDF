@@ -1,0 +1,90 @@
+/* Example CSS for Markdown to PDF conversion */
+
+/* Reset some default browser styles */
+body, h1, h2, h3, h4, h5, h6, blockquote, p, pre, hr {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+    padding: 0;
+    color: #333;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+/* Links */
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Lists */
+ul, ol {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    padding-left: 30px;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 20px 0;
+    padding: 0 15px;
+    color: #777;
+    border-left: 4px solid #ddd;
+}
+
+/* Code blocks
+pre {
+    background-color: #f5f5f5;
+    padding: 15px;
+    margin: 20px 0;
+    overflow: auto;
+} */
+
+pre {
+    background-color: #f5f5f5;
+    padding: 15px;
+    margin: 20px 0;
+    overflow: auto;
+    white-space: pre; /* This ensures whitespace is preserved */
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+    white-space: pre; /* This ensures whitespace is preserved */
+}
+
+
+/* Horizontal rules */
+hr {
+    margin: 30px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}

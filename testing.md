@@ -36,3 +36,4 @@ Here is a sample code block:
 ```python
 def hello_world():
     print("Hello, world!")
+```
