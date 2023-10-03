@@ -3,6 +3,11 @@ import markdown
 import pdfkit 
 import argparse
 import os 
+import re
+
+def preprocess_markdown(markdown_content):
+    # Use regex to remove the language identifiers from code fences
+    return re.sub(r"```(\w+)\n", "```\n", markdown_content)
 
 def list_files(folder_path):
     return [f for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
@@ -11,6 +16,7 @@ def convert(input_file, output_file, css_file):
     with open(input_file, 'r', encoding='utf-8') as f:
         markdown_content = f.read()
         
+    markdown_content = preprocess_markdown(markdown_content)
     pdfkit.from_string(markdown.markdown(markdown_content), output_file, css=css_file)
 
 def convert_combined(input_folder, output_file, css_file):
@@ -22,6 +28,7 @@ def convert_combined(input_folder, output_file, css_file):
         with open(file, 'r', encoding='utf-8') as f:
             markdown_content = f.read()
 
+        markdown_content = preprocess_markdown(markdown_content)
         html_content += markdown.markdown(markdown_content)
 
     pdfkit.from_string(html_content, output_file, css=css_file)
