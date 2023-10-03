@@ -28,3 +28,8 @@ For macOS, install with Homebrew:
 brew install wkhtmltopdf
 ```
 You can also download it from wkhtmltopdf.org and follow installation instructions.
+
+## Using MD2PDF
+
+## Styling PDFs with CSS
+The resulting PDFs can be styled with CSS. A sample CSS file named __sample.css__ has been included in the project and demonstrates the usage of CSS styling rules to determine the output PDFs. 
