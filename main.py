@@ -1,4 +1,3 @@
-from typing_extensions import Required
 import markdown 
 import pdfkit 
 import argparse
@@ -47,7 +46,7 @@ def process_folder_into_file(input_folder, output_file, css_file):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Convert Markdown to PDF.')
-    parser.add_argument('--type', type=int, required=False, help='1 to process a file, 2 to process a folder')
+    parser.add_argument('--type', type=int, required=True, help='Specify whether to process a single file or multiple files in a folder.')
     parser.add_argument('--input', type=str, required=True, help='Input Markdown file or folder.')
     parser.add_argument('--output', type=str, required=True, help='Output PDF file.')
     parser.add_argument('--css', type=str, required=False, help='Optional CSS file for styling.')  # Optional
@@ -70,5 +69,5 @@ if __name__ == "__main__":
     elif type == 2:
         process_folder_into_file(input_file, output_file, css_file)
     else:
-        process_folder_into_folder(input_file, output_file)
+        process_folder_into_folder(input_file, output_file, css_file)
     print(f"Successfully converted '{input_file}' to '{output_file}'.")
