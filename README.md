@@ -36,10 +36,13 @@ python md2pdf.py
 ```
 The program will prompt you for the following:
 1. __Input__: The input for this program are file/folder paths. You can specify a path to a Markdown file (.md), or a folder consisting .md files
-2. __Output__: The output for this program are .pdf file paths/folder paths. You can specify a path to a .pdf file, or a folder that will contain the .pdf files
+2. __Output__: The output for this program are .pdf file paths/folder paths. You can specify a path to a .pdf file, or a folder that will contain the .pdf files. The folder does not need to already exist as the program can create a new folder for you.
 3. __CSS file__: You can specify the path to a .css file for styling your Markdown file
 
-
+There are different outcomes of specifying files and folders as input and output:
+1. If you specify an .md __file as input__ and specify a .pdf __file as output__, then the __.md file is converted into a .pdf file__.
+2. If you specify a __folder as input__ and specify a __folder as output__ , then the __.md files in the input folder are converted to .pdf files in the output folder__
+3. If you specify a __folder as input__ and specify a .pdf __file as output__, then the __.md files in the input folder are combined into a single .pdf file__.
 
 ## Styling PDFs with CSS
 The resulting PDFs can be styled with CSS. A sample CSS file named __sample.css__ has been included in the project and demonstrates the usage of CSS styling rules to determine the output PDFs. 
