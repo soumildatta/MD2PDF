@@ -51,5 +51,6 @@ The resulting PDFs can be styled with CSS. A sample CSS file named __sample.css_
 There are a few future updates planned that can improve upon this tool:
 * Syntax coloring in code blocks
 * Ignore non .md files inside a folder and process only the .md files
+* MD2PDF will be available through HomeBrew soon
 
-Feel free to suggest new features by opening an issue. 
+Feel free to suggest new features or bugs by opening an issue. This project is open to contributions!
