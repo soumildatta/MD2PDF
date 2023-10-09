@@ -53,4 +53,4 @@ There are a few future updates planned that can improve upon this tool:
 * Ignore non .md files inside a folder and process only the .md files
 * MD2PDF will be available through HomeBrew soon
 
-Feel free to suggest new features or bugs by opening an issue. This project is open to contributions!
+Feel free to suggest new features or bugs by opening an issue. This project is open to contributions! :) Contributions are also open to help with the future updates.
