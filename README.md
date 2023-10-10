@@ -3,6 +3,15 @@
 MD2PDF is a CLI Tool created with Python 3 that allows you to convert your markdown documents into pdfs. There are several ways you can do this -- convert a markdown file into a pdf, convert a folder of markdown files into a folder of pdf files, and convert a folder of markdown files into one combined pdf file.
 MD2PDF currently only works with Unix style systems, but I will extend it to Windows shortly.
 
+##### Table of Contents  
+* [Requirements](#requirements)  
+* [Usage](#usage)  
+* [Styling your PDF](#styling)  
+* [Future Updates and Contribution](#future)  
+
+
+<a name="requirements"/>
+
 ## Requirements
 To run this script on your machine, you will need the following:
 * Python 3
@@ -29,6 +38,8 @@ brew install wkhtmltopdf
 ```
 You can also download it from wkhtmltopdf.org and follow installation instructions.
 
+<a name="usage"/>
+
 ## Using MD2PDF
 Run the python code using 
 ```bash
@@ -44,8 +55,12 @@ There are different outcomes of specifying files and folders as input and output
 2. If you specify a __folder as input__ and specify a __folder as output__ , then the __.md files in the input folder are converted to .pdf files in the output folder__
 3. If you specify a __folder as input__ and specify a .pdf __file as output__, then the __.md files in the input folder are combined into a single .pdf file__.
 
+<a name="styling"/>
+
 ## Styling PDFs with CSS
 The resulting PDFs can be styled with CSS. A sample CSS file named __sample.css__ has been included in the project and demonstrates the usage of CSS styling rules to determine the output PDFs. 
+
+<a name="future"/>
 
 ## Future Updates 
 There are a few future updates planned that can improve upon this tool:
