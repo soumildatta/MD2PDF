@@ -58,7 +58,7 @@ There are different outcomes of specifying files and folders as input and output
 <a name="styling"/>
 
 ## Styling PDFs with CSS
-The resulting PDFs can be styled with CSS. Fonts, colors, sizes, stroke, etc. of each element in your generated PDF can all be customized as per your liking. A sample CSS file named __sample.css__ has been included in the project and demonstrates the usage of CSS styling rules to determine the output PDFs. 
+The resulting PDFs can be styled with CSS. Fonts, colors, sizes, stroke, etc. of each element in your generated PDF can all be customized as per your liking. A sample CSS file named __sample.css__ has been included in the project and demonstrates the usage of CSS styling rules to determine the styling of the output PDFs. 
 
 <a name="future"/>
 
