@@ -55,6 +55,8 @@ There are different outcomes of specifying files and folders as input and output
 2. If you specify a __folder as input__ and specify a __folder as output__ , then the __.md files in the input folder are converted to .pdf files in the output folder__
 3. If you specify a __folder as input__ and specify a .pdf __file as output__, then the __.md files in the input folder are combined into a single .pdf file__.
 
+MD2PDF also supports inline HTML, so utilizing different div tags with different classes could allow even more customization through CSS.
+
 <a name="styling"/>
 
 ## Styling PDFs with CSS
