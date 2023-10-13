@@ -1,0 +1,59 @@
+name: Package and Release MD2PDF
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        arch: [x64, arm64]
+    runs-on: ${{ matrix.os }}
+    continue-on-error: true # Optional: remove this if you want the workflow to fail if one matrix element fails
+    env:
+      MATRIX_ARCH: ${{ matrix.arch }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install --upgrade setuptools wheel
+
+    - name: Package app for Linux
+      run: python setup.py sdist bdist_wheel --plat-name=manylinux1_${{ env.MATRIX_ARCH }}
+      if: matrix.os == 'ubuntu-latest'
+
+    - name: Package app for macOS
+      run: python setup.py sdist bdist_wheel --plat-name=macosx_10_9_${{ env.MATRIX_ARCH }}
+      if: matrix.os == 'macos-latest'
+
+    - name: Create GitHub Release
+      if: matrix.os == 'ubuntu-latest' && matrix.arch == 'x64' # Create release only once
+      id: create_release
+      uses: gh-actions/create-release@v1
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload release asset
+      uses: actions/upload-release-asset@v1
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./dist/MD2PDF-${{ github.ref }}-${{ matrix.os }}-${{ matrix.arch }}.tar.gz
+        asset_name: MD2PDF-${{ github.ref }}-${{ matrix.os }}-${{ matrix.arch }}.tar.gz
+        asset_content_type: application/gzip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
