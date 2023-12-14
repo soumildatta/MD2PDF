@@ -1,7 +1,7 @@
 # MD2PDF
 
 MD2PDF is a CLI Tool created with Python 3 that allows you to convert your markdown documents into pdfs. There are several ways you can do this -- convert a markdown file into a pdf, convert a folder of markdown files into a folder of pdf files, and convert a folder of markdown files into one combined pdf file.
-MD2PDF currently only works with Unix style systems, but I will extend it to Windows shortly.
+This project was created after my personal need of a lightweight markdown folder converter. MD2PDF currently only works with Unix style systems, but will be extended to Windows shortly.
 
 ## Requirements
 To run this script on your machine, you will need the following:
