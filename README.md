@@ -67,4 +67,5 @@ There are a few future updates planned that can improve upon this tool:
 * Ignore non .md files inside a folder and process only the .md files
 * MD2PDF will be available through HomeBrew soon
 
+## Contributions 🙌
 Feel free to suggest new features or bugs by opening an issue. This project is open to contributions! :) Contributions are open to help with the future updates, as well as adding useful templates such as resumes and CVs that can be used by others (make sure to remove any identifying information).
